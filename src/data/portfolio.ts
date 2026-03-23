@@ -44,7 +44,15 @@ export const socials = {
 export const skills = [
   {
     category: "Languages",
-    items: ["JavaScript(ES6)", "Python", "TypeScript", "HTML", "CSS/Sass", "R", "SQL"],
+    items: [
+      "JavaScript(ES6)",
+      "Python",
+      "TypeScript",
+      "HTML",
+      "CSS/Sass",
+      "R",
+      "SQL",
+    ],
   },
   {
     category: "Frontend",
@@ -56,11 +64,24 @@ export const skills = [
   },
   {
     category: "Tools & Platforms",
-    items: ["Git & GitHub", "Gulp & Grunt", "Chrome DevTools", "Vercel", "VS Code", "Figma"],
+    items: [
+      "Git & GitHub",
+      "Gulp & Grunt",
+      "Chrome DevTools",
+      "Vercel",
+      "VS Code",
+      "Figma",
+    ],
   },
   {
     category: "Other",
-    items: ["Tkinter", "Data Analysis", "Agile / Scrum", "Firebase", "Supabase"],
+    items: [
+      "Tkinter",
+      "Data Analysis",
+      "Agile / Scrum",
+      "Firebase",
+      "Supabase",
+    ],
   },
 ];
 
@@ -104,7 +125,7 @@ export const projects = [
       "A creative frontend experiment turning static landscape photography into an immersive, motion-driven experience. Built with SCSS and vanilla JS, the 3D card tilt and parallax depth effects are CSS-powered with JS enhancing the interaction layer. Pure frontend craft.",
     tags: ["JavaScript", "SCSS", "HTML", "CSS Animations", "3D Effects"],
     github: "https://github.com/Officialsammy2701/Landscapes-in-Motion",
-    live: "",
+    live: "https://landscapes-in-motion.vercel.app/",
     featured: true,
     image: "/projects/landscapes.png",
   },
