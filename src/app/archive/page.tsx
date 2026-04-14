@@ -1,24 +1,29 @@
 // ============================================================
 // src/app/archive/page.tsx
-// Full archive of every project — linked from the projects
-// section "view the archive" link.
+// Full archive of every project — auto-populated from GitHub.
+// Featured projects stay manually curated on the homepage.
 // ============================================================
-
+ 
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FiArrowLeft, FiExternalLink, FiGithub } from 'react-icons/fi'
-import { projects, personal } from '@/data/portfolio'
-
+import { personal } from '@/data/portfolio'
+import { getArchiveProjects } from '@/lib/github'
+ 
 export const metadata: Metadata = {
   title: 'Project Archive',
   description: `All projects ever built by ${personal.fullName}.`,
 }
-
-export default function ArchivePage() {
+ 
+// This is a Next.js Server Component — data fetches at build time
+// and revalidates every 6 hours (configured inside getArchiveProjects).
+export default async function ArchivePage() {
+  const projects = await getArchiveProjects()
+ 
   return (
     <div className="min-h-screen bg-bg-primary pt-28 pb-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-40" />
-
+ 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         {/* Back link */}
         <Link
@@ -27,7 +32,7 @@ export default function ArchivePage() {
         >
           <FiArrowLeft size={14} /> Back to projects
         </Link>
-
+ 
         {/* Header */}
         <div className="mb-16">
           <p className="font-mono text-xs text-accent-cyan tracking-widest uppercase mb-2">
@@ -37,77 +42,92 @@ export default function ArchivePage() {
             All Projects
           </h1>
           <p className="font-body text-text-secondary">
-            A complete archive of everything I&apos;ve built — {projects.length} projects and counting.
+            A complete archive of everything I&apos;ve built —{' '}
+            {projects.length} project{projects.length !== 1 ? 's' : ''} and counting.
           </p>
         </div>
-
-        {/* Table header */}
-        <div className="grid grid-cols-[auto_1fr_auto] gap-6 pb-3 border-b border-border-subtle mb-2">
-          <span className="mono-label text-xs w-10">Year</span>
-          <span className="mono-label text-xs">Project</span>
-          <span className="mono-label text-xs">Links</span>
-        </div>
-
-        {/* Project rows */}
-        <div className="flex flex-col">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group grid grid-cols-[auto_1fr_auto] gap-6 py-5 border-b border-border-subtle hover:bg-bg-secondary/50 transition-colors duration-200 rounded-sm px-2 -mx-2"
-            >
-              {/* Year */}
-              <span className="font-mono text-xs text-text-muted w-10 pt-1">
-                {project.year}
-              </span>
-
-              {/* Title + description + tags */}
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-display font-bold text-base text-text-primary group-hover:text-accent-cyan transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p className="font-body text-text-secondary text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex items-center gap-2 flex-wrap pt-1">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded font-mono text-xs bg-bg-tertiary border border-border-subtle text-text-muted"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Links */}
-              <div className="flex items-start gap-3 pt-1">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-muted hover:text-accent-cyan transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <FiGithub size={17} />
-                  </a>
-                )}
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-muted hover:text-accent-cyan transition-colors"
-                    aria-label="Live site"
-                  >
-                    <FiExternalLink size={17} />
-                  </a>
-                )}
-              </div>
+ 
+        {projects.length === 0 ? (
+          <div className="py-20 text-center">
+            <p className="font-mono text-sm text-text-muted">
+              No projects found. Add the{' '}
+              <code className="text-accent-cyan">portfolio</code> topic to
+              repos on GitHub to have them appear here.
+            </p>
+          </div>
+        ) : (
+          <>
+            {/* Table header */}
+            <div className="grid grid-cols-[auto_1fr_auto] gap-6 pb-3 border-b border-border-subtle mb-2">
+              <span className="mono-label text-xs w-10">Year</span>
+              <span className="mono-label text-xs">Project</span>
+              <span className="mono-label text-xs">Links</span>
             </div>
-          ))}
-        </div>
+ 
+            {/* Project rows */}
+            <div className="flex flex-col">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="group grid grid-cols-[auto_1fr_auto] gap-6 py-5 border-b border-border-subtle hover:bg-bg-secondary/50 transition-colors duration-200 rounded-sm px-2 -mx-2"
+                >
+                  {/* Year */}
+                  <span className="font-mono text-xs text-text-muted w-10 pt-1">
+                    {project.year}
+                  </span>
+ 
+                  {/* Title + description + tags */}
+                  <div className="flex flex-col gap-1.5">
+                    <h3 className="font-display font-bold text-base text-text-primary group-hover:text-accent-cyan transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                    {project.description && (
+                      <p className="font-body text-text-secondary text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+                    )}
+                    {project.tags.length > 0 && (
+                      <div className="flex items-center gap-2 flex-wrap pt-1">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 rounded font-mono text-xs bg-bg-tertiary border border-border-subtle text-text-muted"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+ 
+                  {/* Links */}
+                  <div className="flex items-start gap-3 pt-1">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-muted hover:text-accent-cyan transition-colors"
+                      aria-label="GitHub"
+                    >
+                      <FiGithub size={17} />
+                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-muted hover:text-accent-cyan transition-colors"
+                        aria-label="Live site"
+                      >
+                        <FiExternalLink size={17} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   )
