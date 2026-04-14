@@ -53,9 +53,9 @@ export default function Navbar() {
             src="/images/logo-with-background.png"
             alt={`${personal.brandName} logo`}
             width={120}
-            height={40}
+            height={120}
             priority
-            className="object-contain"
+            className="h-12 w-auto object-contain sm:h-14"
           />
         </Link>
 
