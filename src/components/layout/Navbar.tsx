@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { personal, resumeUrl } from "@/data/portfolio";
-import { Image } from "next/image";
+import Image from "next/image";
 
 // Nav links — update hrefs to match your section IDs / pages
 const navLinks = [
