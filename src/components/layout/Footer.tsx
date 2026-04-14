@@ -14,6 +14,8 @@ import {
   FiYoutube,
   FiMail,
 } from "react-icons/fi";
+import Link from "next/link";
+import Image from "next/image";
 import { FaTiktok, FaCodepen, FaStackOverflow } from "react-icons/fa";
 import { personal, socials } from "@/data/portfolio";
 
@@ -33,12 +35,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-border-subtle bg-bg-primary/80">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center gap-6">
-        {/* Brand name */}
-        <p className="font-display font-bold text-lg tracking-tight">
-          <span className="text-accent-cyan font-mono">&lt;</span>
-          {personal.brandName}
-          <span className="text-accent-cyan font-mono">/&gt;</span>
-        </p>
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/images/logo-with-background.png"
+            alt={`${personal.brandName} logo`}
+            width={120}
+            height={120}
+            priority
+            className="h-12 w-auto object-contain sm:h-14"
+          />
+        </Link>
 
         {/* Social icons row — wraps on mobile */}
         <div className="flex items-center gap-5 flex-wrap justify-center">
