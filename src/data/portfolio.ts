@@ -99,7 +99,7 @@ export const projects = [
     github: "https://github.com/Officialsammy2701/PowerPause",
     live: "https://powerpause.vercel.app",
     featured: true,
-    image: "/projects/powerpause.png",
+    image: "/images/powerpause.png",
   },
   {
     id: "bibleflash",
@@ -127,7 +127,7 @@ export const projects = [
     github: "https://github.com/Officialsammy2701/Landscapes-in-Motion",
     live: "https://landscapes-in-motion.vercel.app/",
     featured: true,
-    image: "/projects/landscapes.png",
+    image: "/images/landscapes-in-motion.png",
   },
   {
     id: "ecommerce",
