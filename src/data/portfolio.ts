@@ -111,9 +111,9 @@ export const projects = [
       "BibleFlash is a Progressive Web App built for daily inspiration. Swipeable flashcard UI, push notification reminders, and full offline capability via service workers. Installable on any device like a native app. A project that combined UX craft with real PWA engineering.",
     tags: ["JavaScript", "HTML", "CSS", "PWA", "Service Workers"],
     github: "https://github.com/Officialsammy2701/bibleflash",
-    live: "",
+    live: "https://officialsammy2701.github.io/bibleflash/",
     featured: true,
-    image: "/projects/bibleflash.png",
+    image: "/images/bibleflash.png",
   },
   {
     id: "landscapes-in-motion",
