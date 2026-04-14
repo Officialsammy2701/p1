@@ -22,10 +22,6 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const navLogo = [
-  { brand__logo: "/images/logo.png", alt: `${personal.brandName} logo` }
-];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,8 +50,8 @@ export default function Navbar() {
         {/* Logo — left */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            src={navLogo[0].brand__logo}
-            alt={navLogo[0].alt}
+            src="/images/logo.png"
+            alt={`${personal.brandName} logo`}
             width={120}
             height={40}
             priority
