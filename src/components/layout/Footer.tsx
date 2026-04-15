@@ -63,32 +63,36 @@ export default function Footer() {
 
             const isActive = social.active !== false;
             return (
-              <a
-                key={key}
-                href={isActive ? social.url : undefined}
-                target={isActive ? "_blank" : undefined}
-                rel={isActive ? "noopener noreferrer" : undefined}
-                aria-label={label}
-                title={!isActive ? "Coming soon" : label}
-                className={`
-                  relative group 
-                  ${isActive
-                    ? "text-text-muted hover:text-accent-cyan hover:scale-110"
-                    : "text-text-muted/30 cursor-not-allowed pointer-events-none"}
-                  transition-colors duration-200
-                `}
-              >
-                <Icon size={20} />
+              <div key={key} className="relative group">
+                {isActive ? (
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    title={label}
+                    className="inline-flex text-text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
+                  >
+                    <Icon size={20} />
+                  </a>
+                ) : (
+                  <span
+                    aria-label={label}
+                    title={label}
+                    className="inline-flex text-text-muted/30 cursor-not-allowed transition-colors duration-200"
+                  >
+                    <Icon size={20} />
+                  </span>
+                )}
 
-                {/* Tooltip */}
                 {!isActive && (
                   <span
                     className="
-                      absolute -top-8 left-1/2 -translate-x-1/2
-                      whitespace-nowrap
+                      absolute -top-9 left-1/2 -translate-x-1/2
+                      whitespace-nowrap rounded
                       px-2 py-1 text-xs font-mono
                       bg-bg-secondary text-text-primary
-                      border border-border-subtle rounded
+                      border border-border-subtle
                       opacity-0 group-hover:opacity-100
                       transition-opacity duration-200
                       pointer-events-none
@@ -97,7 +101,7 @@ export default function Footer() {
                     Coming soon
                   </span>
                 )}
-              </a>
+              </div>
             );
           })}
         </div>

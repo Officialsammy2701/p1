@@ -12,10 +12,8 @@ import {
   FiLinkedin,
   FiTwitter,
   FiInstagram,
-  FiYoutube,
-  FiMail,
 } from "react-icons/fi";
-import { FaTiktok, FaCodepen, FaStackOverflow } from "react-icons/fa";
+import { FaCodepen } from "react-icons/fa";
 import { personal, socials } from "@/data/portfolio";
 
 const socialIcons = [
@@ -43,32 +41,55 @@ export default function SocialSidebar() {
 
           const isActive = social.active !== false;
           return (
-            <a
-              href={isActive ? social.url : undefined}
-              target={isActive ? "_blank" : undefined}
-              rel={isActive ? "noopener noreferrer" : undefined}
-              aria-label={label}
-              title={!isActive ? "Coming soon" : label}
-              className={`
-                ${isActive
-                  ? "text-text-muted hover:text-accent-cyan"
-                  : "text-text-muted/30 cursor-not-allowed pointer-events-none"}
-                transition-colors duration-200
-              `}
-            >
-              <Icon size={20} />
-            </a>
+            <div key={key} className="relative group">
+              {isActive ? (
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="inline-flex text-text-muted hover:text-accent-cyan transition-colors duration-200"
+                >
+                  <Icon size={20} />
+                </a>
+              ) : (
+                <span
+                  aria-label={label}
+                  title={label}
+                  className="inline-flex text-text-muted/30 cursor-not-allowed transition-colors duration-200"
+                >
+                  <Icon size={20} />
+                </span>
+              )}
+
+              {!isActive && (
+                <span
+                  className="
+                    absolute -top-9 left-1/2 -translate-x-1/2
+                    whitespace-nowrap rounded
+                    px-2 py-1 text-xs font-mono
+                    bg-bg-secondary text-text-primary
+                    border border-border-subtle
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-200
+                    pointer-events-none
+                  "
+                >
+                  Coming soon
+                </span>
+              )}
+            </div>
           );
         })}
       </div>
 
-      {/* ── Right sidebar — email ── */}
       <div
         className="
-        fixed bottom-0 right-14 z-40
-        hidden lg:flex flex-col items-center gap-5
-        after:content-[''] after:block after:w-px after:h-24 after:bg-text-muted/40
-      "
+          fixed bottom-0 right-14 z-40
+          hidden lg:flex flex-col items-center gap-5
+          after:content-[''] after:block after:w-px after:h-24 after:bg-text-muted/40
+        "
       >
         <a
           href={`mailto:${personal.email}`}
