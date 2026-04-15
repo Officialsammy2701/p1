@@ -33,9 +33,8 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border-subtle bg-bg-primary/80">
+    <footer className="bg-transparent">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center gap-6">
-        {/* Brand Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/images/logo-with-background.png"
@@ -47,12 +46,11 @@ export default function Footer() {
           />
         </Link>
 
-        {/* Social icons row — wraps on mobile */}
-        <div className="flex items-center gap-5 flex-wrap justify-center">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
           <a
             href={`mailto:${personal.email}`}
             aria-label="Email"
-            className="text-text-muted hover:text-accent-cyan transition-colors duration-200"
+            className="inline-flex h-10 w-10 items-center justify-center text-text-muted hover:text-accent-cyan transition-colors duration-200"
           >
             <FiMail size={20} />
           </a>
@@ -62,6 +60,7 @@ export default function Footer() {
             if (!social?.url) return null;
 
             const isActive = social.active !== false;
+
             return (
               <div key={key} className="relative group">
                 {isActive ? (
@@ -71,7 +70,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={label}
                     title={label}
-                    className="inline-flex text-text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
+                    className="inline-flex h-10 w-10 items-center justify-center text-text-muted hover:text-accent-cyan hover:scale-110 transition-all duration-200"
                   >
                     <Icon size={20} />
                   </a>
@@ -79,7 +78,7 @@ export default function Footer() {
                   <span
                     aria-label={label}
                     title={label}
-                    className="inline-flex text-text-muted/30 cursor-not-allowed transition-colors duration-200"
+                    className="inline-flex h-10 w-10 items-center justify-center text-text-muted/30 cursor-not-allowed transition-colors duration-200"
                   >
                     <Icon size={20} />
                   </span>
@@ -106,7 +105,7 @@ export default function Footer() {
           })}
         </div>
 
-        <div className="w-16 h-px bg-border-subtle" />
+        <div className="w-16 h-px bg-white/5" />
 
         <p className="text-text-muted text-sm font-body text-center hover:text-accent-cyan transition-colors duration-200">
           Designed & Built by {personal.fullName}.

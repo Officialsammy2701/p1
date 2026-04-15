@@ -4,9 +4,12 @@
 // src/components/ui/SocialSidebar.tsx
 // Fixed left + right sidebars — social icons left, email right.
 // Stays visible no matter where you scroll on the page.
+// Disabled icons stay visible and show a tooltip on hover.
+// Hides automatically when the footer comes into view to avoid overlap.
 // Inspired by brittanychiang.com
 // ============================================================
 
+import { useEffect, useState } from "react";
 import {
   FiGithub,
   FiLinkedin,
@@ -25,21 +28,42 @@ const socialIcons = [
 ] as const;
 
 export default function SocialSidebar() {
+  const [hideSidebar, setHideSidebar] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideSidebar(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* ── Left sidebar — social icons ── */}
       <div
-        className="
-        fixed bottom-0 left-14 z-40
-        hidden lg:flex flex-col items-center gap-5
-        after:content-[''] after:block after:w-px after:h-24 after:bg-text-muted/40
-      "
+        className={`
+          fixed bottom-0 left-14 z-40
+          hidden lg:flex flex-col items-center gap-5
+          after:content-[''] after:block after:w-px after:h-24 after:bg-text-muted/40
+          transition-all duration-700 ease-[0.22,1,0.36,1]
+          ${hideSidebar ? "opacity-0 translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"}
+        `}
       >
         {socialIcons.map(({ key, icon: Icon, label }) => {
           const social = socials[key as keyof typeof socials];
           if (!social?.url) return null;
 
           const isActive = social.active !== false;
+
           return (
             <div key={key} className="relative group">
               {isActive ? (
@@ -49,7 +73,7 @@ export default function SocialSidebar() {
                   rel="noopener noreferrer"
                   aria-label={label}
                   title={label}
-                  className="inline-flex text-text-muted hover:text-accent-cyan transition-colors duration-200"
+                  className="inline-flex h-10 w-10 items-center justify-center text-text-muted hover:text-accent-cyan transition-colors duration-200"
                 >
                   <Icon size={20} />
                 </a>
@@ -57,7 +81,7 @@ export default function SocialSidebar() {
                 <span
                   aria-label={label}
                   title={label}
-                  className="inline-flex text-text-muted/30 cursor-not-allowed transition-colors duration-200"
+                  className="inline-flex h-10 w-10 items-center justify-center text-text-muted/30 cursor-not-allowed transition-colors duration-200"
                 >
                   <Icon size={20} />
                 </span>
@@ -84,12 +108,15 @@ export default function SocialSidebar() {
         })}
       </div>
 
+      {/* ── Right sidebar — email ── */}
       <div
-        className="
+        className={`
           fixed bottom-0 right-14 z-40
           hidden lg:flex flex-col items-center gap-5
           after:content-[''] after:block after:w-px after:h-24 after:bg-text-muted/40
-        "
+          transition-all duration-700 ease-[0.22,1,0.36,1]
+          ${hideSidebar ? "opacity-0 translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"}
+        `}
       >
         <a
           href={`mailto:${personal.email}`}
