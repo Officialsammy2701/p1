@@ -147,7 +147,8 @@ export default function ProjectViewer() {
 
                 {/* Previous */}
                 {prevProject && (
-                  <>
+                  <> 
+                    <span className="text-accent-cyan">/</span>
                     <Link
                       href={`/projects/${prevProject.id}`}
                       className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2 transition-all duration-300 hover:translate-y-[-1px]"
@@ -156,8 +157,6 @@ export default function ProjectViewer() {
                     </Link>
                   </>
                 )}
-
-                <span className="text-accent-cyan">/</span>
 
                 {/* Current */}
                 <span className="text-accent-cyan font-bold">
