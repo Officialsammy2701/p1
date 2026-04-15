@@ -94,13 +94,13 @@ export default function ProjectViewer() {
               </span>{" "}
               {project.title}
             </p>
+            <p className="font-mono text-[12px] sm:text-xs text-text-muted">
+              {project.year}
+            </p>
           </div>
 
           {/* right */}
           <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] sm:text-sm">
-            <p className="font-mono text-[11px] sm:text-xs text-text-muted/80">
-              {project.year}
-            </p>
             <Link
               href="/#projects"
               className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2"
