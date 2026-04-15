@@ -53,18 +53,18 @@ export default function ProjectViewer() {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* centered project visual */}
-      <div className="absolute inset-0 flex items-center justify-center px-6 pt-10 pb-32 sm:px-10 sm:pb-28">
+      <div className="absolute inset-0 flex items-center justify-center px-6 pt-4 pb-28 sm:px-10 sm:pt-6 sm:pb-24">
         <div className="relative flex items-center justify-center w-full h-full">
           <img
             src={project.image}
             alt={project.title}
             className="
-              max-w-[88vw] sm:max-w-[82vw] lg:max-w-[70vw]
-              max-h-[52vh] sm:max-h-[62vh] lg:max-h-[68vh]
+              max-w-[92vw] sm:max-w-[84vw] lg:max-w-[76vw]
+              max-h-[58vh] sm:max-h-[68vh] lg:max-h-[74vh]
               w-auto h-auto object-contain
               rounded-lg sm:rounded-xl
               border border-white/10
-              shadow-[0_0_60px_rgba(255,255,255,0.06)]
+              shadow-[0_0_80px_rgba(255,255,255,0.04)]
             "
           />
         </div>
@@ -72,12 +72,12 @@ export default function ProjectViewer() {
 
       {/* bottom-left project info */}
       <div className="absolute left-0 right-0 bottom-20 sm:bottom-24 z-10 px-5 sm:px-6 pointer-events-none">
-        <div className="max-w-[18rem] sm:max-w-md">
-          <h1 className="font-display font-bold text-lg sm:text-xl lg:text-2xl text-text-primary leading-tight">
+        <div className="max-w-[16rem] sm:max-w-[20rem] lg:max-w-[24rem]">
+          <h1 className="font-display font-bold text-xl sm:text-2xl text-text-primary leading-tight">
             {project.title}
           </h1>
 
-          <p className="mt-2 font-body text-sm sm:text-base text-text-secondary leading-relaxed">
+          <p className="mt-3 font-body text-sm sm:text-[15px] text-text-secondary/85 leading-relaxed">
             {project.longDesc || project.description}
           </p>
         </div>
@@ -94,13 +94,13 @@ export default function ProjectViewer() {
               </span>{" "}
               {project.title}
             </p>
-            <p className="font-mono text-[11px] sm:text-xs text-text-muted">
-              {project.year}
-            </p>
           </div>
 
           {/* right */}
           <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] sm:text-sm">
+            <p className="font-mono text-[11px] sm:text-xs text-text-muted/80">
+              {project.year}
+            </p>
             <Link
               href="/#projects"
               className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2"
