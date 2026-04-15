@@ -77,28 +77,28 @@ export default function ProjectViewer() {
 
       {/* bottom meta bar */}
       <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-border-subtle bg-bg-primary/75 backdrop-blur-sm">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between px-4 sm:px-6 py-5 sm:py-6 min-h-[108px] sm:min-h-[120px]">
+        <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 py-6 sm:py-7 min-h-[120px] sm:min-h-[132px]">
           {/* left */}
-          <div className="flex flex-col gap-1.5">
-            <p className="font-mono text-xs sm:text-sm text-text-primary">
-              <span className="font-bold">
+          <div className="flex flex-col items-center sm:items-start justify-center gap-2 text-center sm:text-left">
+            <p className="font-mono text-base sm:text-lg text-text-primary">
+              <span className="font-bold text-accent-cyan">
                 Exploration {String(currentIndex + 1).padStart(2, "0")}:
               </span>{" "}
               {project.title}
             </p>
 
-            <p className="font-mono text-[11px] sm:text-xs text-text-muted">
+            <p className="font-mono text-sm sm:text-base text-text-secondary">
               {project.tags.join(", ")}
             </p>
           </div>
 
           {/* right */}
-          <div className="flex flex-col items-start sm:items-end gap-2">
-            <p className="font-mono text-[11px] sm:text-xs text-text-muted">
-              {getProjectDate(project)}
+          <div className="flex flex-col items-center sm:items-end justify-center gap-2 text-center sm:text-right">
+            <p className="font-mono text-base sm:text-lg text-text-primary">
+                {getProjectDate(project)}
             </p>
 
-            <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] sm:text-sm">
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 font-mono text-sm sm:text-base">
               <Link
                 href="/#projects"
                 className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2"
@@ -106,17 +106,16 @@ export default function ProjectViewer() {
                 ← Main
               </Link>
 
-              <DoubleSlash />
-
-              {prevProject ? (
-                <Link
-                  href={`/projects/${prevProject.id}`}
-                  className="text-text-muted hover:text-accent-cyan transition-colors"
-                >
-                  {String(currentIndex).padStart(2, "0")}
-                </Link>
-              ) : (
-                <span className="text-text-muted/25">--</span>
+              {prevProject && (
+                <>
+                  <DoubleSlash />
+                  <Link
+                    href={`/projects/${prevProject.id}`}
+                    className="text-text-muted hover:text-accent-cyan transition-colors"
+                  >
+                    {String(currentIndex).padStart(2, "0")}
+                  </Link>
+                </>
               )}
 
               <DoubleSlash />
@@ -125,17 +124,16 @@ export default function ProjectViewer() {
                 {String(currentIndex + 1).padStart(2, "0")}
               </span>
 
-              <DoubleSlash />
-
-              {nextProject ? (
-                <Link
-                  href={`/projects/${nextProject.id}`}
-                  className="text-text-muted hover:text-accent-cyan transition-colors"
-                >
-                  {String(currentIndex + 2).padStart(2, "0")} →
-                </Link>
-              ) : (
-                <span className="text-text-muted/25">--</span>
+              {nextProject && (
+                <>
+                  <DoubleSlash />
+                  <Link
+                    href={`/projects/${nextProject.id}`}
+                    className="text-text-muted hover:text-accent-cyan transition-colors"
+                  >
+                    {String(currentIndex + 2).padStart(2, "0")} →
+                  </Link>
+                </>
               )}
             </div>
           </div>
