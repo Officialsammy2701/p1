@@ -28,15 +28,48 @@ these disciplines separate. I connect them.`,
 
 // ── Social / Contact Links ────────────────────────────────────
 export const socials = {
-  github: "https://github.com/Officialsammy2701",
-  linkedin: "https://linkedin.com/in/ismail-akande",
-  twitter: "https://twitter.com/sammy_2701",
-  instagram: "https://instagram.com/officialsammy_2701",
-  youtube: "https://youtube.com/@officialsammy07",
-  tiktok: "https://tiktok.com/@officialsammy_2701",
-  codepen: "https://codepen.io/ismailstudio",
-  stackoverflow: "https://stackoverflow.com/users/20070617/ismailstudio",
-  newsletter: "", // add your newsletter URL when ready (e.g. Substack)
+  github: {
+    url: "https://github.com/Officialsammy2701",
+    active: true,
+  },
+
+  linkedin: {
+    url: "https://linkedin.com/in/ismail-akande",
+    active: true,
+  },
+
+  twitter: {
+    url: "https://twitter.com/sammy_2701",
+    active: false,
+  },
+
+  instagram: {
+    url: "https://instagram.com/officialsammy_2701",
+    active: true,
+  },
+
+  youtube: {
+    url: "https://youtube.com/@officialsammy07",
+    active: false,
+  },
+
+  tiktok: {
+    url: "https://tiktok.com/@officialsammy_2701",
+    active: false,
+  },
+
+  codepen: {
+    url: "https://codepen.io/ismailstudio",
+    active: true,
+  },
+  stackoverflow: {
+    url: "https://stackoverflow.com/users/20070617/ismailstudio",
+    active: true,
+  },
+  newsletter: { // add your newsletter URL when ready (e.g. Substack)
+    url: "",
+    active: false,
+  }
 };
 
 // ── Skills ────────────────────────────────────────────────────
