@@ -38,18 +38,25 @@ export default function SocialSidebar() {
       "
       >
         {socialIcons.map(({ key, icon: Icon, label }) => {
-          const url = socials[key as keyof typeof socials];
-          if (!url) return null;
+          const social = socials[key as keyof typeof socials];
+          if (!social?.url) return null;
+
+          const isActive = social.active !== false;
           return (
             <a
-              key={key}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={isActive ? social.url : undefined}
+              target={isActive ? "_blank" : undefined}
+              rel={isActive ? "noopener noreferrer" : undefined}
               aria-label={label}
-              className="text-text-muted hover:text-accent-cyan hover:-translate-y-1 transition-all duration-200"
+              title={!isActive ? "Coming soon" : label}
+              className={`
+                ${isActive
+                  ? "text-text-muted hover:text-accent-cyan"
+                  : "text-text-muted/30 cursor-not-allowed pointer-events-none"}
+                transition-colors duration-200
+              `}
             >
-              <Icon size={19} />
+              <Icon size={20} />
             </a>
           );
         })}
