@@ -136,11 +136,12 @@ export default function ProjectViewer() {
 
               <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 font-mono text-sm sm:text-base">
                 {/* Main */}
+                <span className="text-text-muted">← </span>
                 <Link
                   href="/#projects"
                   className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2 transition-all duration-300 hover:translate-y-[-1px]"
                 >
-                  ← Main
+                  Main
                 </Link>
 
                 <DoubleSlash />
@@ -148,11 +149,12 @@ export default function ProjectViewer() {
                 {/* Previous */}
                 {prevProject && (
                   <> 
+                    <span className="text-text-muted">← </span>
                     <Link
                       href={`/projects/${prevProject.id}`}
                       className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2 transition-all duration-300 hover:translate-y-[-1px]"
                     >
-                      ← {String(currentIndex).padStart(2, "0")}
+                      {String(currentIndex).padStart(2, "0")}
                     </Link>
                     <span className="text-accent-cyan">/</span>
                   </>
@@ -171,8 +173,9 @@ export default function ProjectViewer() {
                       href={`/projects/${nextProject.id}`}
                       className="text-text-muted hover:text-accent-cyan transition-colors underline underline-offset-2 transition-all duration-300 hover:translate-y-[-1px]"
                     >
-                      {String(currentIndex + 2).padStart(2, "0")} →
+                      {String(currentIndex + 2).padStart(2, "0")}
                     </Link>
+                    <span className="text-text-muted"> → </span>
                   </>
                 )}
               </div>
