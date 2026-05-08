@@ -43,7 +43,7 @@
               #0D1117
             </div>
             <p><span class="text-accent">RGB</span> 13, 17, 23</p>
-            <p><span class="text-accent">HSL</span> 216, 28%, 7%</p>
+            <p><span class="text-accent">HSL</span> 216°, 28%, 7%</p>
           </div>
           <div>
             <div
@@ -55,7 +55,7 @@
               #E6EDF3
             </div>
             <p><span class="text-accent">RGB</span> 230, 237, 243</p>
-            <p><span class="text-accent">HSL</span> 208, 42%, 93%</p>
+            <p><span class="text-accent">HSL</span> 208°, 42%, 93%</p>
           </div>
           <div>
             <div
@@ -67,7 +67,7 @@
               #BFADFF
             </div>
             <p><span class="text-accent">RGB</span> 191, 173, 255</p>
-            <p><span class="text-accent">HSL</span> 253, 100%, 84%</p>
+            <p><span class="text-accent">HSL</span> 253°, 100%, 84%</p>
           </div>
           <div>
             <div
@@ -79,7 +79,7 @@
               #30363D
             </div>
             <p><span class="text-accent">RGB</span> 48, 54, 61</p>
-            <p><span class="text-accent">HSL</span> 212, 12%, 21%</p>
+            <p><span class="text-accent">HSL</span> 212°, 12%, 21%</p>
           </div>
       </section>
 
@@ -160,6 +160,96 @@
           </div>
         </div>
       </section>
+
+      <section id="interactive-elements" class="flow">
+        <h2 class="numbered-title"><span>03 </span>Interactive elements</h2>
+
+        <!-- Navigation -->
+        <div> 
+          <nav style="margin-left: 5rem;">
+            <ul class="primary-navigation underline-indicators flex">
+              <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a></li>
+              <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a></li>
+              <li><a class="uppercase text-w  hite letter-spacing-2" href="#"><span>03</span>Idle</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="flex">
+          <!-- buttons -->
+          <div>
+            <div style="margin: 4rem 0 0 5rem">
+              <!-- Primary Button -->
+              <a href="#" class="btn btn-primary uppercase letter-spacing-3 text-dark bg-light">Explore</a>
+
+              <!-- Secondary Button -->
+              <a href="#" class="btn btn-secondary uppercase letter-spacing-3 text-white bg-secondary-accent">Contact Us</a>
+              
+              <!-- Ghost Button -->
+              <a href="#" class="btn btn-ghost uppercase letter-spacing-3 text-white bg-secondary-accent">Learn More</a>
+            </div>
+          </div>
+
+          <div class="flex" style="margin-bottom: 50vh; --flow-space: 4rem">
+            <!-- Tabs -->
+            <div class="flex" style="margin-top: 4rem;">
+              <div>
+                <!-- Main -->
+                 <span class="text-accent">← </span>
+                 <a href="#" aria-selected="true" class="main uppercase underline-indicators ff-sans-cond text-white letter-spacing-2">Main</a>
+
+                <!-- DoubleSlash -->
+                 <div
+                    class="inline-flex ff-sans-cond text-accent"
+                    aria-hidden="true"
+                    style="display: inline-flex;"
+                  >
+                    <span
+                      style="
+                        display: inline-block;
+                        transform: translateX(-0.25em);
+                      "
+                    >
+                      /
+                    </span>
+
+                    <span
+                      style="
+                        display: inline-block;
+                        transform: translateY(0.25em);
+                      "
+                    >
+                      /
+                    </span>
+                  </div>
+
+                  <!-- Previous -->
+                   <span class="text-accent">← </span>
+                   <link><a class="num-indicators uppercase underline-indicators text-white letter-spacing-2" href="#"><span>01</span></a></link>
+                   <span class="text-accent">/</span>
+
+                   <!-- Current -->
+                    <span class="text-accent font-bold">
+                      <link class="active" href="#">
+                        <a href="#" class="num-indicators uppercase underline-indicators text-white letter-spacing-2"><span><b>02</b></span></a>
+                      </link>
+                    </span>
+
+                  <!-- Next -->
+                   <span class="text-accent">/</span>
+                   <link><a class="num-indicators uppercase underline-indicators text-white letter-spacing-2" href="#"><span>03</span></a></link>
+                   <span class="text-accent"> → </span>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+
+      </section>
+
     </div>
+
+    <script src="index.pack.js"></script>
   </body>
 </html>
