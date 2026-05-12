@@ -20,20 +20,43 @@
 
     <link rel="stylesheet" href="index.css" />
     <title>Ismail Studio — Design System</title>
-
-    
   </head>
 
   <body>
     <div class="container">
-
       <!-- ── Header ── -->
       <header class="ds-header">
         <div class="ds-header-left">
-          <div class="ds-logo-mark"><img src="/public/icons/logo_master_black_variation.svg" alt="Ismail Studio logo"/></div>
+          <!-- Master mark: dark mode = black-path logo on dark bg, light mode = white-path logo on light bg -->
+          <div class="ds-logo-mark">
+            <img
+              class="logo-dark-mode"
+              src="/public/icons/logo_master_black_variation.svg"
+              alt="Ismail Studio"
+              width="100"
+              height="100"
+            />
+            <img
+              class="logo-light-mode"
+              src="/public/icons/logo_master.svg"
+              alt="Ismail Studio"
+              width="100"
+              height="100"
+            />
+          </div>
           <div>
-            <p class="mono-label" style="margin-bottom: 0.1rem;">Ismail Studio</p>
-            <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Design System v2.0</p>
+            <p class="mono-label" style="margin-bottom: 0.1rem">
+              Ismail Studio
+            </p>
+            <p
+              style="
+                font-size: 0.75rem;
+                color: var(--color-text-muted);
+                margin: 0;
+              "
+            >
+              Design System v2.0
+            </p>
           </div>
         </div>
 
@@ -45,13 +68,38 @@
           title="Toggle theme"
         >
           <!-- Sun icon (shown in dark mode) -->
-          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          <svg
+            id="iconSun"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            />
           </svg>
           <!-- Moon icon (shown in light mode) -->
-          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+          <svg
+            id="iconMoon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="display: none"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
           </svg>
         </button>
       </header>
@@ -60,120 +108,194 @@
       <section id="colors" class="ds-section">
         <div class="ds-section-header">
           <h2 class="numbered-title"><span>01</span> Colors</h2>
-          <p style="margin-top: 0.5rem; font-size: 0.875rem;">
-            Palette aligned to <code style="font-family: var(--font-mono); color: var(--color-accent);">tailwind.config.js</code> color tokens.
-            Accent updated to <strong style="color: var(--color-accent);">Burnt Sienna</strong>.
+          <p style="margin-top: 0.5rem; font-size: 0.875rem">
+            Palette aligned to
+            <code
+              style="font-family: var(--font-mono); color: var(--color-accent)"
+              >tailwind.config.js</code
+            >
+            color tokens. Accent updated to
+            <strong style="color: var(--color-accent)">Burnt Sienna</strong>.
           </p>
         </div>
 
-         <div class="swatch-grid">
+        <div class="swatch-grid">
           <!-- bg-primary -->
           <div class="swatch">
-            <div class="swatch-color bg-dark" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-dark"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Midnight</p>
               <p class="swatch-meta">
-                <span>bg-primary</span> <br> #0D1117<br>
+                <span>bg-primary</span> <br />
+                #0D1117<br />
                 HSL 216°, 28%, 7%
               </p>
             </div>
           </div>
- 
+
           <!-- bg-secondary -->
           <div class="swatch">
-            <div class="swatch-color bg-secondary" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-secondary"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Deep Slate</p>
               <p class="swatch-meta">
-                <span>bg-secondary</span> <br> #1C2128<br>
+                <span>bg-secondary</span> <br />
+                #1C2128<br />
                 HSL 216°, 13%, 15%
               </p>
             </div>
           </div>
- 
+
           <!-- text-primary -->
           <div class="swatch">
-            <div class="swatch-color bg-light" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-light"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Silver Mist</p>
               <p class="swatch-meta">
-                <span>text-primary</span> <br> #E6EDF3<br>
+                <span>text-primary</span> <br />
+                #E6EDF3<br />
                 HSL 208°, 42%, 93%
               </p>
             </div>
           </div>
- 
+
           <!-- text-secondary -->
           <div class="swatch">
-            <div class="swatch-color" style="background: hsl(210, 8%, 71%); border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color"
+              style="
+                background: hsl(210, 8%, 71%);
+                border-bottom: 1px solid var(--color-border);
+              "
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Stone</p>
               <p class="swatch-meta">
-                <span>text-secondary</span> <br> #B6BAC3<br>
+                <span>text-secondary</span> <br />
+                #B6BAC3<br />
                 HSL 210°, 8%, 71%
               </p>
             </div>
           </div>
- 
+
           <!-- text-muted -->
           <div class="swatch">
-            <div class="swatch-color" style="background: hsl(212, 12%, 61%); border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color"
+              style="
+                background: hsl(212, 12%, 61%);
+                border-bottom: 1px solid var(--color-border);
+              "
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(216, 28%, 7%, 0.4); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Iron</p>
               <p class="swatch-meta">
-                <span>text-muted</span> <br> #8B949E<br>
+                <span>text-muted</span> <br />
+                #8B949E<br />
                 HSL 212°, 12%, 61%
               </p>
             </div>
           </div>
- 
+
           <!-- border-subtle -->
           <div class="swatch">
-            <div class="swatch-color bg-secondary-accent" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-secondary-accent"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(208, 42%, 93%, 0.5); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Steel Blue</p>
               <p class="swatch-meta">
-                <span>border-subtle</span> <br> #30363D<br>
+                <span>border-subtle</span> <br />
+                #30363D<br />
                 HSL 212°, 12%, 21%
               </p>
             </div>
           </div>
- 
+
           <!-- accent-sienna -->
           <div class="swatch">
-            <div class="swatch-color bg-accent" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(216, 28%, 7%, 0.5); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-accent"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(216, 28%, 7%, 0.5); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Burnt Sienna</p>
               <p class="swatch-meta">
-                <span>accent-sienna</span><br>#E07A3F<br>
+                <span>accent-sienna</span><br />#E07A3F<br />
                 HSL 18°, 70%, 57%
               </p>
             </div>
           </div>
- 
+
           <!-- accent-sienna-dark -->
           <div class="swatch">
-            <div class="swatch-color bg-accent-dark" style="border-bottom: 1px solid var(--color-border);">
-              <span class="mono-label" style="color: hsl(216, 28%, 7%, 0.5); font-size: 0.65rem;">Aa</span>
+            <div
+              class="swatch-color bg-accent-dark"
+              style="border-bottom: 1px solid var(--color-border)"
+            >
+              <span
+                class="mono-label"
+                style="color: hsl(216, 28%, 7%, 0.5); font-size: 0.65rem"
+                >Aa</span
+              >
             </div>
             <div class="swatch-info">
               <p class="swatch-name">Ember</p>
               <p class="swatch-meta">
-                <span>accent-sienna-dark</span> <br> #D4652A<br>
+                <span>accent-sienna-dark</span> <br />
+                #D4652A<br />
                 HSL 19°, 76%, 45%
               </p>
             </div>
@@ -185,45 +307,64 @@
       <section id="typography" class="ds-section">
         <div class="ds-section-header">
           <h2 class="numbered-title"><span>02</span> Typography</h2>
-          <p style="margin-top: 0.5rem; font-size: 0.875rem;">
-            Font stack from <code style="font-family: var(--font-mono); color: var(--color-accent);">tailwind.config.js</code>:
-            <strong>Geist</strong> (display/body) · <strong>Syne</strong> (condensed) · <strong>Space Mono</strong> (mono)
+          <p style="margin-top: 0.5rem; font-size: 0.875rem">
+            Font stack from
+            <code
+              style="font-family: var(--font-mono); color: var(--color-accent)"
+              >tailwind.config.js</code
+            >: <strong>Geist</strong> (display/body) ·
+            <strong>Syne</strong> (condensed) ·
+            <strong>Space Mono</strong> (mono)
           </p>
         </div>
 
         <div class="type-grid">
           <div class="type-specimen">
-            <p class="type-label">H1 · font-display · fluid clamp(2.5rem → 4rem) · weight 800</p>
+            <p class="type-label">
+              H1 · font-display · fluid clamp(2.5rem → 4rem) · weight 800
+            </p>
             <p class="h1">Ismail Studio</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">H2 · font-display · fluid clamp(2rem → 3.5rem) · weight 700</p>
+            <p class="type-label">
+              H2 · font-display · fluid clamp(2rem → 3.5rem) · weight 700
+            </p>
             <p class="h2">Design Systems</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">H3 · font-display · fluid clamp(1.5rem → 2.5rem) · weight 700</p>
+            <p class="type-label">
+              H3 · font-display · fluid clamp(1.5rem → 2.5rem) · weight 700
+            </p>
             <p class="h3">Interaction & Visual</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">H4 · font-sans-cond (Syne) · 1.5rem · uppercase · tracking-normal</p>
+            <p class="type-label">
+              H4 · font-sans-cond (Syne) · 1.5rem · uppercase · tracking-normal
+            </p>
             <p class="h4">Component Library</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">H5 · font-sans-cond (Syne) · 1.25rem · uppercase · tracking-wide</p>
+            <p class="type-label">
+              H5 · font-sans-cond (Syne) · 1.25rem · uppercase · tracking-wide
+            </p>
             <p class="h5">My Edge is Creativity</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">Mono Label · font-mono (Space Mono) · 0.875rem · tracking-normal</p>
+            <p class="type-label">
+              Mono Label · font-mono (Space Mono) · 0.875rem · tracking-normal
+            </p>
             <p class="mono-label">Design Token Reference</p>
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">Numbered Title · font-sans-cond (Syne) · tracking-1</p>
+            <p class="type-label">
+              Numbered Title · font-sans-cond (Syne) · tracking-1
+            </p>
             <p class="numbered-title"><span>01</span>Section Header</p>
           </div>
 
@@ -239,25 +380,60 @@
           </div>
 
           <div class="type-specimen">
-            <p class="type-label">Body text · font-body · fs-400 · line-height 1.6</p>
+            <p class="type-label">
+              Body text · font-body · fs-400 · line-height 1.6
+            </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
-              Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id,
-              mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-              libero sodales leo, eget blandit nunc tortor eu nibh.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
+              neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
+              ligula sollicitudin laoreet viverra, tortor libero sodales leo,
+              eget blandit nunc tortor eu nibh.
             </p>
           </div>
 
           <!-- Letter spacing -->
           <div class="type-specimen">
-            <p class="type-label">Letter spacing scale (from Tailwind config)</p>
-            <div style="display: grid; gap: 0.75rem; margin-top: 0.5rem;">
-              <p class="ff-sans-cond uppercase letter-spacing-tight text-muted" style="font-size: 0.875rem;">tracking-tight · 0.05em</p>
-              <p class="ff-sans-cond uppercase letter-spacing-normal text-muted" style="font-size: 0.875rem;">tracking-normal · 0.1em</p>
-              <p class="ff-sans-cond uppercase letter-spacing-wide text-muted" style="font-size: 0.875rem;">tracking-wide · 0.15em</p>
-              <p class="ff-sans-cond uppercase letter-spacing-1 text-muted" style="font-size: 0.875rem;">tracking-1 · 4.75px</p>
-              <p class="ff-sans-cond uppercase letter-spacing-2 text-muted" style="font-size: 0.875rem;">tracking-2 · 2.7px</p>
-              <p class="ff-sans-cond uppercase letter-spacing-3 text-muted" style="font-size: 0.875rem;">tracking-3 · 2.35px</p>
+            <p class="type-label">
+              Letter spacing scale (from Tailwind config)
+            </p>
+            <div style="display: grid; gap: 0.75rem; margin-top: 0.5rem">
+              <p
+                class="ff-sans-cond uppercase letter-spacing-tight text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-tight · 0.05em
+              </p>
+              <p
+                class="ff-sans-cond uppercase letter-spacing-normal text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-normal · 0.1em
+              </p>
+              <p
+                class="ff-sans-cond uppercase letter-spacing-wide text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-wide · 0.15em
+              </p>
+              <p
+                class="ff-sans-cond uppercase letter-spacing-1 text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-1 · 4.75px
+              </p>
+              <p
+                class="ff-sans-cond uppercase letter-spacing-2 text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-2 · 2.7px
+              </p>
+              <p
+                class="ff-sans-cond uppercase letter-spacing-3 text-muted"
+                style="font-size: 0.875rem"
+              >
+                tracking-3 · 2.35px
+              </p>
             </div>
           </div>
         </div>
@@ -270,7 +446,7 @@
         </div>
 
         <!-- Navigation -->
-        <p class="mono-label" style="margin-bottom: 1rem;">Primary Navigation</p>
+        <p class="mono-label" style="margin-bottom: 1rem">Primary Navigation</p>
         <div class="nav-demo">
           <nav>
             <ul class="primary-navigation underline-indicators flex">
@@ -294,58 +470,158 @@
         </div>
 
         <!-- Buttons -->
-        <p class="mono-label" style="margin: 2rem 0 1rem;">Buttons · accent-sienna</p>
+        <p class="mono-label" style="margin: 2rem 0 1rem">
+          Buttons · accent-sienna
+        </p>
         <div class="btn-row">
-          <a href="#" class="btn btn-primary uppercase letter-spacing-3">Explore</a>
-          <a href="#" class="btn btn-secondary uppercase letter-spacing-3">Contact Us</a>
-          <a href="#" class="btn btn-ghost uppercase letter-spacing-3">Learn More</a>
-          <button class="btn btn-primary uppercase letter-spacing-3" disabled>Disabled</button>
+          <a href="#" class="btn btn-primary uppercase letter-spacing-3"
+            >Explore</a
+          >
+          <a href="#" class="btn btn-secondary uppercase letter-spacing-3"
+            >Contact Us</a
+          >
+          <a href="#" class="btn btn-ghost uppercase letter-spacing-3"
+            >Learn More</a
+          >
+          <button class="btn btn-primary uppercase letter-spacing-3" disabled>
+            Disabled
+          </button>
         </div>
 
         <!-- Theme Toggle demo -->
-        <p class="mono-label" style="margin: 2rem 0 1rem;">Theme Toggle · ThemeToggle.tsx</p>
+        <p class="mono-label" style="margin: 2rem 0 1rem">
+          Theme Toggle · ThemeToggle.tsx
+        </p>
         <div class="toggle-demo">
           <button
             class="theme-toggle"
             id="themeToggle2"
             aria-label="Toggle dark/light mode"
           >
-            <svg id="iconSun2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            <svg
+              id="iconSun2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+              />
             </svg>
-            <svg id="iconMoon2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+            <svg
+              id="iconMoon2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="display: none"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
             </svg>
           </button>
-          <p style="font-size: 0.875rem; margin: 0;">
-            Toggles <code style="font-family: var(--font-mono); color: var(--color-accent);">.light</code> on
-            <code style="font-family: var(--font-mono); color: var(--color-accent);">&lt;html&gt;</code> ·
-            persisted to <code style="font-family: var(--font-mono); color: var(--color-accent);">localStorage</code>
+          <p style="font-size: 0.875rem; margin: 0">
+            Toggles
+            <code
+              style="font-family: var(--font-mono); color: var(--color-accent)"
+              >.light</code
+            >
+            on
+            <code
+              style="font-family: var(--font-mono); color: var(--color-accent)"
+              >&lt;html&gt;</code
+            >
+            · persisted to
+            <code
+              style="font-family: var(--font-mono); color: var(--color-accent)"
+              >localStorage</code
+            >
           </p>
         </div>
 
         <!-- Tab / num indicators -->
-        <p class="mono-label" style="margin: 2rem 0 1rem;">Tab / Num Indicators</p>
-        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1.5rem; background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 0.5rem;">
+        <p class="mono-label" style="margin: 2rem 0 1rem">
+          Tab / Num Indicators
+        </p>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+          "
+        >
           <span class="text-accent">← </span>
-          <a href="#" aria-selected="true" class="main uppercase ff-sans-cond letter-spacing-2" style="color: var(--color-text-primary); text-decoration: none;">Main</a>
-          <div style="display: inline-flex; font-family: var(--font-sans-cond); color: var(--color-accent);">
-            <span style="display: inline-block; transform: translateX(-0.25em);">/</span>
-            <span style="display: inline-block; transform: translateY(0.25em);">/</span>
+          <a
+            href="#"
+            aria-selected="true"
+            class="main uppercase ff-sans-cond letter-spacing-2"
+            style="color: var(--color-text-primary); text-decoration: none"
+            >Main</a
+          >
+          <div
+            style="
+              display: inline-flex;
+              font-family: var(--font-sans-cond);
+              color: var(--color-accent);
+            "
+          >
+            <span style="display: inline-block; transform: translateX(-0.25em)"
+              >/</span
+            >
+            <span style="display: inline-block; transform: translateY(0.25em)"
+              >/</span
+            >
           </div>
           <span class="text-accent">← </span>
-          <a class="num-indicators uppercase letter-spacing-2" href="#" style="color: var(--color-text-primary); text-decoration: none;"><span>01</span></a>
+          <a
+            class="num-indicators uppercase letter-spacing-2"
+            href="#"
+            style="color: var(--color-text-primary); text-decoration: none"
+            ><span>01</span></a
+          >
           <span class="text-accent">/</span>
-          <a class="num-indicators uppercase letter-spacing-2" href="#" style="color: var(--color-text-primary); text-decoration: none;"><span><b>02</b></span></a>
+          <a
+            class="num-indicators uppercase letter-spacing-2"
+            href="#"
+            style="color: var(--color-text-primary); text-decoration: none"
+            ><span><b>02</b></span></a
+          >
           <span class="text-accent">/</span>
-          <a class="num-indicators uppercase letter-spacing-2" href="#" style="color: var(--color-text-primary); text-decoration: none;"><span>03</span></a>
+          <a
+            class="num-indicators uppercase letter-spacing-2"
+            href="#"
+            style="color: var(--color-text-primary); text-decoration: none"
+            ><span>03</span></a
+          >
           <span class="text-accent"> →</span>
         </div>
 
         <!-- Link underline -->
-        <p class="mono-label" style="margin: 2rem 0 1rem;">Link Underline</p>
-        <div style="padding: 1.5rem; background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 0.5rem;">
+        <p class="mono-label" style="margin: 2rem 0 1rem">Link Underline</p>
+        <div
+          style="
+            padding: 1.5rem;
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+          "
+        >
           <a href="#" class="link-underline">Hover to reveal underline</a>
         </div>
       </section>
@@ -356,22 +632,32 @@
           <h2 class="numbered-title"><span>04</span> Components</h2>
         </div>
 
-        <p class="mono-label" style="margin-bottom: 1rem;">Cards · shadow-glow on hover</p>
+        <p class="mono-label" style="margin-bottom: 1rem">
+          Cards · shadow-glow on hover
+        </p>
         <div class="cards-grid">
           <div class="card">
             <p class="card-demo-label">Project</p>
-            <h3 class="h4" style="margin-bottom: 0.5rem;">Visual Identity</h3>
-            <p style="font-size: 0.875rem;">Brand systems, logo design, and visual language across all touchpoints.</p>
+            <h3 class="h4" style="margin-bottom: 0.5rem">Visual Identity</h3>
+            <p style="font-size: 0.875rem">
+              Brand systems, logo design, and visual language across all
+              touchpoints.
+            </p>
           </div>
           <div class="card">
             <p class="card-demo-label">Project</p>
-            <h3 class="h4" style="margin-bottom: 0.5rem;">Motion Design</h3>
-            <p style="font-size: 0.875rem;">Animation, transitions, and kinetic storytelling for digital products.</p>
+            <h3 class="h4" style="margin-bottom: 0.5rem">Motion Design</h3>
+            <p style="font-size: 0.875rem">
+              Animation, transitions, and kinetic storytelling for digital
+              products.
+            </p>
           </div>
           <div class="card">
             <p class="card-demo-label">Project</p>
-            <h3 class="h4" style="margin-bottom: 0.5rem;">Sound Design</h3>
-            <p style="font-size: 0.875rem;">Audio branding, UI sound effects, and immersive sonic experiences.</p>
+            <h3 class="h4" style="margin-bottom: 0.5rem">Sound Design</h3>
+            <p style="font-size: 0.875rem">
+              Audio branding, UI sound effects, and immersive sonic experiences.
+            </p>
           </div>
         </div>
       </section>
@@ -384,28 +670,28 @@
 
         <div class="spacing-grid">
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-xs);"></div>
-            <p class="space-label">xs<br>0.5rem</p>
+            <div class="space-block" style="height: var(--space-xs)"></div>
+            <p class="space-label">xs<br />0.5rem</p>
           </div>
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-sm);"></div>
-            <p class="space-label">sm<br>1rem</p>
+            <div class="space-block" style="height: var(--space-sm)"></div>
+            <p class="space-label">sm<br />1rem</p>
           </div>
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-md);"></div>
-            <p class="space-label">md<br>1.5rem</p>
+            <div class="space-block" style="height: var(--space-md)"></div>
+            <p class="space-label">md<br />1.5rem</p>
           </div>
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-lg);"></div>
-            <p class="space-label">lg<br>2rem</p>
+            <div class="space-block" style="height: var(--space-lg)"></div>
+            <p class="space-label">lg<br />2rem</p>
           </div>
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-xl);"></div>
-            <p class="space-label">xl<br>3rem</p>
+            <div class="space-block" style="height: var(--space-xl)"></div>
+            <p class="space-label">xl<br />3rem</p>
           </div>
           <div class="space-item">
-            <div class="space-block" style="height: var(--space-2xl);"></div>
-            <p class="space-label">2xl<br>4rem</p>
+            <div class="space-block" style="height: var(--space-2xl)"></div>
+            <p class="space-label">2xl<br />4rem</p>
           </div>
         </div>
       </section>
@@ -418,11 +704,23 @@
 
         <div class="animation-demo">
           <div class="anim-item">
-            <div class="anim-box animate-fade-in" style="animation-iteration-count: infinite; animation-duration: 2s;"></div>
+            <div
+              class="anim-box animate-fade-in"
+              style="
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+              "
+            ></div>
             <p class="anim-label">fade-in</p>
           </div>
           <div class="anim-item">
-            <div class="anim-box animate-slide-up" style="animation-iteration-count: infinite; animation-duration: 2s;"></div>
+            <div
+              class="anim-box animate-slide-up"
+              style="
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+              "
+            ></div>
             <p class="anim-label">slide-up</p>
           </div>
           <div class="anim-item">
@@ -430,15 +728,255 @@
             <p class="anim-label">float</p>
           </div>
           <div class="anim-item">
-            <div class="anim-box" style="display: flex; align-items: center; justify-content: center;">
-              <span class="animate-blink" style="display: block; width: 3px; height: 1.5rem; background: hsl(216, 28%, 7%); border-radius: 2px;"></span>
+            <div
+              class="anim-box"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <span
+                class="animate-blink"
+                style="
+                  display: block;
+                  width: 3px;
+                  height: 1.5rem;
+                  background: hsl(216, 28%, 7%);
+                  border-radius: 2px;
+                "
+              ></span>
             </div>
             <p class="anim-label">blink</p>
           </div>
         </div>
       </section>
 
-    </div><!-- /container -->
+      <!-- ── 07 Brand & Logo ── -->
+      <section id="brand" class="ds-section">
+        <div class="ds-section-header">
+          <h2 class="numbered-title"><span>07</span> Brand &amp; Logo</h2>
+          <p style="margin-top: 0.5rem; font-size: 0.875rem">
+            Each variation ships in two fills —
+            <strong style="color: var(--color-text-primary)">dark-bg</strong>
+            (black paths, for use on dark surfaces) and
+            <strong style="color: var(--color-text-primary)">light-bg</strong>
+            (white paths, for use on light surfaces). Left pane = dark, right
+            pane = light.
+          </p>
+        </div>
+
+        <!-- 4 logo variations -->
+        <div class="logo-grid">
+          <!-- Master mark -->
+          <div class="logo-card">
+            <div class="logo-preview tall">
+              <div class="logo-preview-half dark-half">
+                <img
+                  src="/public/icons/logo_master_black_variation.svg"
+                  alt="Master mark — dark bg"
+                />
+              </div>
+              <div class="logo-preview-half light-half">
+                <img
+                  src="/public/icons/logo_master.svg"
+                  alt="Master mark — light bg"
+                />
+              </div>
+            </div>
+            <div class="logo-card-info">
+              <p class="logo-card-name">Master Mark</p>
+              <p class="logo-card-desc">
+                Primary icon · use standalone at any size · favicons, app icons,
+                embossing
+              </p>
+            </div>
+          </div>
+
+          <!-- Simplified mark -->
+          <div class="logo-card">
+            <div class="logo-preview tall">
+              <div class="logo-preview-half dark-half">
+                <img
+                  src="/public/icons/logo_simplified_black_variation.svg"
+                  alt="Simplified mark — dark bg"
+                />
+              </div>
+              <div class="logo-preview-half light-half">
+                <img
+                  src="/public/icons/logo_simplified.svg"
+                  alt="Simplified mark — light bg"
+                />
+              </div>
+            </div>
+            <div class="logo-card-info">
+              <p class="logo-card-name">Simplified Mark</p>
+              <p class="logo-card-desc">
+                Reduced-detail icon · optimised for small sizes, sub-32px usage
+              </p>
+            </div>
+          </div>
+
+          <!-- Accent variant (Burnt Sienna) — Special use only -->
+          <div class="logo-card logo-card-special">
+            <div class="logo-preview">
+              <div class="logo-preview-half dark-half">
+                <img
+                  src="/public/icons/logo_master_accent_variant.svg"
+                  alt="Full lockup — dark bg"
+                  style="max-height: 80px"
+                />
+              </div>
+              <div class="logo-preview-half light-half">
+                <img
+                  src="/public/icons/logo_simplified_accent_variant.svg"
+                  alt="Full lockup — light bg"
+                  style="max-height: 80px"
+                />
+              </div>
+            </div>
+            <div class="logo-card-info">
+              <p class="logo-card-name">Accent Variant</p>
+              <p class="logo-card-desc">
+                <strong style="color: var(--color-accent)"
+                  >Special use only</strong
+                >
+                · Burnt Sienna (#E07A3F) · limited to favicon, special
+                applications, embossing on branded materials
+              </p>
+            </div>
+          </div>
+
+          <!-- Wordmark -->
+          <div class="logo-card">
+            <div class="logo-preview">
+              <div class="logo-preview-half dark-half">
+                <img
+                  src="/public/icons/logo_wordmark_black_variation.svg"
+                  alt="Wordmark — dark bg"
+                  style="max-height: 80px"
+                />
+              </div>
+              <div class="logo-preview-half light-half">
+                <img
+                  src="/public/icons/logo_wordmark.svg"
+                  alt="Wordmark — light bg"
+                  style="max-height: 80px"
+                />
+              </div>
+            </div>
+            <div class="logo-card-info">
+              <p class="logo-card-name">Wordmark</p>
+              <p class="logo-card-desc">
+                Logotype only · use when the icon isn't needed; headers,
+                footers, email signatures
+              </p>
+            </div>
+          </div>
+
+          <!-- Full lockup -->
+          <div class="logo-card">
+            <div class="logo-preview">
+              <div class="logo-preview-half dark-half">
+                <img
+                  src="/public/icons/logo_full_lockup_black_variation.svg"
+                  alt="Full lockup — dark bg"
+                  style="max-height: 80px"
+                />
+              </div>
+              <div class="logo-preview-half light-half">
+                <img
+                  src="/public/icons/logo_full_lockup.svg"
+                  alt="Full lockup — light bg"
+                  style="max-height: 80px"
+                />
+              </div>
+            </div>
+            <div class="logo-card-info">
+              <p class="logo-card-name">Full Lockup</p>
+              <p class="logo-card-desc">
+                Icon + wordmark · primary brand expression; presentations,
+                proposals, hero areas
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Usage rules -->
+        <p class="mono-label" style="margin: 2.5rem 0 1rem;">Usage Guidelines</p>
+        <div class="logo-usage-grid">
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">Dark surfaces</p>
+            <p class="logo-usage-rule">Use the <strong>light-path</strong> files (e.g. <code style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-accent);">logo_master.svg</code>) — they render with white fills that show against dark backgrounds</p>
+          </div>
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">Light surfaces</p>
+            <p class="logo-usage-rule">Use the <strong>black_variation</strong> files (e.g. <code style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-accent);">logo_master_black_variation.svg</code>) — dark fills for light backgrounds</p>
+          </div>
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">Minimum size</p>
+            <p class="logo-usage-rule">Master mark: 24px minimum. Simplified mark: 16px minimum. Below these sizes, use text-only wordmark</p>
+          </div>
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">Burnt Sienna accent</p>
+            <p class="logo-usage-rule"><strong>Special use only.</strong> Reserved for favicon (32px), premium embossing, and featured callouts. Do not use as primary logo.</p>
+          </div>
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">No modifications</p>
+            <p class="logo-usage-rule">Do not rotate, recolour, stretch, add effects, or place on busy backgrounds without a backing shape</p>
+          </div>
+          <div class="logo-usage-item">
+            <p class="logo-usage-label">Theme switching</p>
+            <p class="logo-usage-rule">In web contexts, toggle between variants using the <code style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-accent);">.light</code> class on <code style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-accent);">&lt;html&gt;</code> — exactly as ThemeToggle.tsx does</p>
+          </div>
+        </div>
+
+        <!-- Clear-space diagram -->
+        <div style="margin-top: 3rem;">
+          <p class="mono-label" style="margin-bottom: 1.5rem;">Clear Space Rules</p>
+          <div style="background-color: var(--color-bg-secondary); border: 1px solid var(--color-border); border-radius: 0.5rem; padding: 2rem; max-width: 600px;">
+            <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;">
+              <!-- Background -->
+              <rect width="500" height="300" fill="var(--color-bg-primary)" />
+              
+              <!-- Clear space zones (semi-transparent) -->
+              <rect x="50" y="50" width="30" height="200" fill="var(--color-accent)" opacity="0.15" />
+              <rect x="420" y="50" width="30" height="200" fill="var(--color-accent)" opacity="0.15" />
+              <rect x="80" y="50" width="340" height="30" fill="var(--color-accent)" opacity="0.15" />
+              <rect x="80" y="220" width="340" height="30" fill="var(--color-accent)" opacity="0.15" />
+              
+              <!-- Logo area (represented by a rounded rectangle) -->
+              <rect x="160" y="100" width="180" height="100" rx="4" fill="none" stroke="var(--color-text-primary)" stroke-width="2" stroke-dasharray="5,5" />
+              <text x="250" y="155" font-family="var(--font-mono)" font-size="14" fill="var(--color-text-primary)" text-anchor="middle" dominant-baseline="middle">Logo Mark</text>
+              
+              <!-- Dimension lines and labels -->
+              <!-- Left clear space -->
+              <line x1="50" y1="270" x2="80" y2="270" stroke="var(--color-accent)" stroke-width="2" />
+              <line x1="50" y1="260" x2="50" y2="280" stroke="var(--color-accent)" stroke-width="2" />
+              <line x1="80" y1="260" x2="80" y2="280" stroke="var(--color-accent)" stroke-width="2" />
+              <text x="65" y="295" font-family="var(--font-mono)" font-size="12" fill="var(--color-accent)" text-anchor="middle">x</text>
+              
+              <!-- Top clear space -->
+              <line x1="90" y1="50" x2="90" y2="80" stroke="var(--color-accent)" stroke-width="2" />
+              <line x1="80" y1="50" x2="100" y2="50" stroke="var(--color-accent)" stroke-width="2" />
+              <line x1="80" y1="80" x2="100" y2="80" stroke="var(--color-accent)" stroke-width="2" />
+              <text x="125" y="65" font-family="var(--font-mono)" font-size="12" fill="var(--color-accent)">x</text>
+              
+              <!-- Height reference -->
+              <line x1="420" y1="110" x2="435" y2="110" stroke="var(--color-text-muted)" stroke-width="1.5" stroke-dasharray="3,3" />
+              <line x1="420" y1="190" x2="435" y2="190" stroke="var(--color-text-muted)" stroke-width="1.5" stroke-dasharray="3,3" />
+              <line x1="427" y1="110" x2="427" y2="190" stroke="var(--color-text-muted)" stroke-width="1.5" />
+              <text x="460" y="150" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-muted)">h</text>
+            </svg>
+            <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 1.5rem; margin-bottom: 0;">
+              <strong>Clear space = "h"</strong> (logo height) on all sides. For a 100px logo, maintain 100px breathing room. This ensures the mark stands independently and isn't visually crowded by adjacent content.
+            </p>
+          </div>
+        </div>
+ 
+      </section>
+    </div>
+    <!-- /container -->
 
     <script src="index.js"></script>
   </body>
